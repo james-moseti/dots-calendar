@@ -3,6 +3,7 @@
 > "One year is a lot shorter than you think, don't waste it"
 
 A minimalist Android app that visualizes your year progress through dots. Each dot represents a day of the year, helping you stay mindful of how you spend your time.
+The main goal of this project is to learn how to create widgets for an android application. 
 
 ## Features
 - Shows the current year
@@ -11,16 +12,16 @@ A minimalist Android app that visualizes your year progress through dots. Each d
 - Built with Jetpack Compose + Material 3
 
 ## Screenshots
-![main_ui.png](app/src/main/res/drawable/main_ui.png)
+<img src="./screenshots/main_ui.png" width="300"/>
 
 ## Setup
 
 1. Clone the repository
     ```bash
-    git clone https://github.com/yourusername/dots-calendar.git
+    git clone https://github.com/james-moseti/dots-calendar.git
     ```
    Or copy the URL and then in android studio paste the link and click clone. 
-   ![open_with_version_control.png](app/src/main/res/drawable/open_with_version_control.png)
+   ![open_with_version_control.png](./screenshots/open_with_version_control.png)
 
 2. Open the project in Android Studio
 
