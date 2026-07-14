@@ -48,7 +48,7 @@ fun YearProgressScreen(
         Text(
             text = progress.year.toString(),
             fontSize = 28.sp,
-            fontWeight = FontWeight.Light,
+            fontWeight = FontWeight.Bold,
             color = MaterialTheme.colorScheme.onBackground
         )
 
