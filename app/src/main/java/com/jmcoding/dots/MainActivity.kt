@@ -17,6 +17,8 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
 
+        YearProgressWidgetWorker.scheduleNextMidnightRefresh(applicationContext)
+
         setContent {
             DotsTheme {
                 Scaffold(

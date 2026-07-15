@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Dots</string>
+    <string name="year_progress_widget_description">Shows how much of the year has passed as a dot grid.</string>
 </resources>
