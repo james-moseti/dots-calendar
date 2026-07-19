@@ -1,4 +1,4 @@
-package com.jmcoding.dots
+package com.jmcoding.dots.widget
 
 import android.graphics.Bitmap
 import android.graphics.Canvas
@@ -18,15 +18,13 @@ import kotlin.math.sqrt
 fun drawYearProgressBitmap(
     widthPx: Int,
     heightPx: Int,
-    year: Int,
     totalDays: Int,
     filledDays: Int,
     daysLeft: Int,
     percentComplete: Float,
-    backgroundColor: Int = Color.parseColor("#121212"),
+    backgroundColor: Int = Color.parseColor("#2C2C2E"),
     filledColor: Int = Color.parseColor("#8AB4F8"),
-    emptyColor: Int = Color.parseColor("#3A3A3C"),
-    textColor: Int = Color.WHITE,
+    emptyColor: Int = Color.parseColor("#4A4A4C"),
     subtextColor: Int = Color.parseColor("#99FFFFFF")
 ): Bitmap {
     val w = max(widthPx, 1)
@@ -38,15 +36,6 @@ fun drawYearProgressBitmap(
     val density = w / 200f // rough scale factor so text/dots scale with widget size
     val padding = 12f * density
 
-    // --- Year title ---
-    val titlePaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
-        color = textColor
-        typeface = Typeface.DEFAULT_BOLD
-        textSize = 16f * density
-        textAlign = Paint.Align.CENTER
-    }
-    val titleHeight = titlePaint.fontSpacing
-
     // --- Footer text ---
     val footerPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
         color = subtextColor
@@ -56,7 +45,7 @@ fun drawYearProgressBitmap(
     }
     val footerHeight = footerPaint.fontSpacing
 
-    val gridTop = padding + titleHeight + (6f * density)
+    val gridTop = padding
     val gridBottom = h - padding - footerHeight - (6f * density)
     val gridAreaHeight = max(gridBottom - gridTop, 1f)
     val gridAreaWidth = max(w - 2 * padding, 1f)
@@ -89,9 +78,6 @@ fun drawYearProgressBitmap(
         val cy = startY + row * (dotSize + spacing) + radius
         canvas.drawCircle(cx, cy, radius, if (i < filledDays) filledPaint else emptyPaint)
     }
-
-    // Draw title
-    canvas.drawText(year.toString(), w / 2f, padding + titlePaint.textSize, titlePaint)
 
     // Draw footer
     val footerText = "${daysLeft}d left • ${"%.1f".format(percentComplete)}%"

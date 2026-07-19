@@ -1,4 +1,4 @@
-package com.jmcoding.dots
+package com.jmcoding.dots.widget
 
 import android.content.Context
 import androidx.compose.runtime.Composable
@@ -22,6 +22,7 @@ import androidx.glance.layout.Box
 import androidx.glance.layout.fillMaxSize
 import androidx.glance.appwidget.action.ActionCallback
 import androidx.glance.action.ActionParameters
+import com.jmcoding.dots.computeYearProgress
 import java.time.LocalDate
 import kotlin.math.roundToInt
 
@@ -61,7 +62,6 @@ class YearProgressWidget : GlanceAppWidget() {
             drawYearProgressBitmap(
                 widthPx = widthPx,
                 heightPx = heightPx,
-                year = progress.year,
                 totalDays = progress.totalDays,
                 filledDays = progress.daysPassed,
                 daysLeft = progress.daysLeft,

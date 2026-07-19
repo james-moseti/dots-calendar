@@ -7,6 +7,7 @@ import androidx.work.ExistingWorkPolicy
 import androidx.work.OneTimeWorkRequestBuilder
 import androidx.work.WorkManager
 import androidx.work.WorkerParameters
+import com.jmcoding.dots.widget.YearProgressWidget
 import java.time.Duration
 import java.time.LocalDate
 import java.time.LocalDateTime
